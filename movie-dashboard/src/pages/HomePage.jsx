@@ -1,31 +1,52 @@
-import React, { useEffect, useState } from 'react';
-import { getTrending } from '../api/tmdb';
-import MovieCard from '../components/MovieCard';
-import LoadingSkeleton from '../components/LoadingSkeleton';
+import { useEffect, useState } from "react";
+import MovieCard from "../components/MovieCard";
+import LoadingSkeleton from "../components/LoadingSkeleton";
+import { getTrending, getPopular, getTopRated } from "../api/tmdb";
 
-export default function HomePage(){
-  const [trending, setTrending] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [err, setErr] = useState(null);
+export default function HomePage() {
+  const [movies, setMovies] = useState(null);
 
-  useEffect(()=>{
-    let mounted = true;
-    setLoading(true);
-    getTrending()
-      .then(data => { if(mounted) setTrending(data.results || []) })
-      .catch(e => { if(mounted) setErr(e.message) })
-      .finally(()=> { if(mounted) setLoading(false) });
-    return ()=> mounted=false;
-  },[]);
+  useEffect(() => {
+    async function loadData() {
+      const [trend, pop, top] = await Promise.all([
+        getTrending(),
+        getPopular(),
+        getTopRated(),
+      ]);
 
-  if(loading) return <LoadingSkeleton />;
-  if(err) return <div className="text-red-400">Error: {err}</div>;
+      setMovies({
+        trending: trend.results,
+        popular: pop.results,
+        topRated: top.results,
+      });
+    }
+
+    loadData();
+  }, []);
+
+  if (!movies) return <LoadingSkeleton />;
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl text-white mb-4">Trending</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {trending.map(movie => <MovieCard key={movie.id} movie={movie} />)}
+      <h2 className="text-white text-2xl mb-4">Trending</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {movies.trending.map((m) => (
+          <MovieCard key={m.id} movie={m} />
+        ))}
+      </div>
+
+      <h2 className="text-white text-2xl my-6">Popular</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {movies.popular.map((m) => (
+          <MovieCard key={m.id} movie={m} />
+        ))}
+      </div>
+
+      <h2 className="text-white text-2xl my-6">Top Rated</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {movies.topRated.map((m) => (
+          <MovieCard key={m.id} movie={m} />
+        ))}
       </div>
     </div>
   );
