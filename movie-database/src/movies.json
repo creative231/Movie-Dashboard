@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "poster_path": "https://m.media-amazon.com/images/M/MV5BMzc2MDdkZDUtZjZlYy00MGMyLWJkNzUtMTMxY2FkZjZjYmEyXkEyXkFqcGc@._V1_SX300.jpg",
+    "overview": "A thief who steals corporate secrets...",
+    "genre": ["Action", "Sci-Fi"],
+    "vote_average": 8.8,
+    "release_date": "2010-07-16"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "poster_path": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "overview": "Batman faces the Joker...",
+    "genre": ["Action", "Drama"],
+    "vote_average": 9.0,
+    "release_date": "2008-07-18"
+  }
+]
