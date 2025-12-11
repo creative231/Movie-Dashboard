@@ -8,7 +8,7 @@ const MovieCard = ({ movie, onSelect }) => {
       onClick={() => onSelect(movie)}
     >
       <img
-        src={movie.poster_path}
+        src={movie.poster}
         alt={movie.title}
         className="w-full h-64 object-cover"
       />

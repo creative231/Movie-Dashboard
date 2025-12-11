@@ -7,34 +7,40 @@ import MovieDetails from "./components/MovieDetails";
 import "./App.css";
 
 function App() {
+  // State variables
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filters, setFilters] = useState({ genre: "", rating: "" });
 
-  // Load Movies
+  // Load movies from local JSON once when component mounts
   useEffect(() => {
-    fetchMovies();
+    fetch("/movies.json") // movies.json must be in /public
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load JSON");
+        return res.json();
+      })
+      .then((data) => {
+        setMovies(data);
+        setFilteredMovies(data);
+      })
+      // .catch((err) => console.error("Error loading movies:", err));
   }, []);
-
-  const fetchMovies = async () => {
-    const response = await fetch("/movies.json");
-    const data = await response.json();
-    setMovies(data);
-    setFilteredMovies(data);
-  };
-
+// 
+  // Search handler
   const handleSearch = (query) => {
     setSearchQuery(query);
     filterMovies(query, filters);
   };
 
+  // Filter handler
   const handleFilter = (newFilters) => {
     setFilters(newFilters);
     filterMovies(searchQuery, newFilters);
   };
 
+  // Combine search + filter
   const filterMovies = (query, filters) => {
     let filtered = movies.filter((m) =>
       m.title.toLowerCase().includes(query.toLowerCase())
@@ -57,7 +63,6 @@ function App() {
       <SearchBar onSearch={handleSearch} />
       <Filter filters={filters} onChange={handleFilter} />
       <MovieList movies={filteredMovies} onSelect={setSelectedMovie} />
-
       {selectedMovie && (
         <MovieDetails
           movie={selectedMovie}

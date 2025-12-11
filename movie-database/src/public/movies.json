@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Inception",
+    "title": "The Rookie",
     "poster_path": "https://m.media-amazon.com/images/M/MV5BMzc2MDdkZDUtZjZlYy00MGMyLWJkNzUtMTMxY2FkZjZjYmEyXkEyXkFqcGc@._V1_SX300.jpg",
-    "overview": "A thief who steals corporate secrets...",
-    "genre": ["Action", "Sci-Fi"],
+    "overview": "The series follows John Nolan, a 40-year-old man who moves from his comfortable, small-town life to Los Angeles to pursue his dream of being a police officer for the Los Angeles Police Department. He must navigate the dangerous, humorous, and unpredictable world of a \"young\" cop, determined to make his second shot at life count",
+    "genre": ["Action, Crime, Drama"],
     "vote_average": 8.8,
-    "release_date": "2010-07-16"
+    "release_date": "2018"
   },
   {
     "id": 2,
