@@ -7,8 +7,9 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
       placeholder="Search movies..."
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
+    //   className="p-2 w-full border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 dark:bg-gray-800 dark:text-white dark:border-gray-600"
     />
   );
 };
 
-export default SearchBar; // <-- make sure this line exists
+export default SearchBar;

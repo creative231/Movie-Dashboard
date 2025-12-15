@@ -1,24 +1,20 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 
 const MoviesPage = ({ onSelectMovie }) => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
-
   const moviesPerPage = 8;
 
   useEffect(() => {
     fetch("/movies.json")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(setMovies);
   }, []);
 
-  const topRated = movies.filter(m => m.vote_average >= 8.5);
+  const topRated = movies.filter((m) => m.vote_average >= 8.5);
   const latest = movies.slice().reverse();
-  const paginated = movies.slice(
-    (page - 1) * moviesPerPage,
-    page * moviesPerPage
-  );
+  const paginated = movies.slice((page - 1) * moviesPerPage, page * moviesPerPage);
 
   return (
     <div className="p-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
@@ -34,14 +30,14 @@ const MoviesPage = ({ onSelectMovie }) => {
       {/* Pagination */}
       <div className="flex justify-center gap-4 mt-6">
         <button
-          onClick={() => setPage(p => Math.max(p - 1, 1))}
-          className="px-4 py-2 bg-gray-700 text-white rounded"
+          onClick={() => setPage((p) => Math.max(p - 1, 1))}
+          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition"
         >
           Prev
         </button>
         <button
-          onClick={() => setPage(p => p + 1)}
-          className="px-4 py-2 bg-gray-700 text-white rounded"
+          onClick={() => setPage((p) => p + 1)}
+          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition"
         >
           Next
         </button>

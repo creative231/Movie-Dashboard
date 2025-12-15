@@ -9,22 +9,34 @@ const Header = () => {
   }, [dark]);
 
   return (
-    <header className="bg-gray-900 dark:bg-black text-white p-4 flex justify-between items-center">
-      <h1 className="text-2xl font-bold"> Movie Dashboard</h1>
+    <header>
+      <h1>Movie Dashboard</h1>
+<NavLink
+          to="/"
+          >
+             Home
+          </NavLink>
 
-      <nav className="flex gap-6 justify-between items-center sp">
-        <NavLink to="/" className="hover:text-yellow-400">Home</NavLink>
-        <NavLink to="/movies" className="hover:text-yellow-400">Movies</NavLink>
-        <NavLink to="/about" className="hover:text-yellow-400">About</NavLink>
+          <NavLink
+           to="/movies"
+           >
+             Movies
+           </NavLink>
 
-        <button
-          onClick={() => setDark(!dark)}
-          className="ml-4 px-3 py-1 bg-gray-700 rounded"
-        >
-          {dark ? "☀️" : "🌙"}
-        </button>
-      </nav>
+           <NavLink
+             to="/about"
+             >
+                About
+             </NavLink>
+
+             <button
+           onClick={() => setDark(!dark)}>
+            <span>
+                {dark ? "☀️" : "🌙"}
+            </span>
+           </button>
     </header>
+    
   );
 };
 
