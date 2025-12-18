@@ -9,22 +9,22 @@ const Header = () => {
   }, [dark]);
 
   return (
-    <header>
+    <header className="flex items-center justify-between p-4 bg-sky-200">
       <div>
-      <h1>Movie Dashboard</h1>
+      <h1 className="text-2xl font-bold text-blue-800">Movie Dashboard</h1>
       </div>
 
-      
+
       <NavLink
           to="/"
-          >
+          className="no-underline transition-transform duration-300 hover:scale-105">
              Home
           </NavLink>
         
         <div>
           <NavLink
            to="/movies"
-           >
+           className="no-underline transition-transform duration-300 hover:scale-105">
              Movies
            </NavLink>
             </div>
@@ -32,7 +32,7 @@ const Header = () => {
             <div>
            <NavLink
              to="/about"
-             >
+             className="no-underline transition-transform duration-300 hover:scale-105">
                 About
              </NavLink>
              </div>
