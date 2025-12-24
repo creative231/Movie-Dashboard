@@ -2,86 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Font family */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.header {
+    text-align: center; /* Center the content */
+    padding: 20px; /* Add padding */
+    border-bottom: 2px solid #3498db; /* Blue border at the bottom */
 }
 
 h1 {
-   color: rgb(184, 21, 21);
+    font-size: 2.5em; /* Larger font size for the title */
+    margin: 0; /* Remove margin */
+}
+
+.nav {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center the links */
+    margin-top: 10px; /* Margin above nav */
+}
+
+.navlink {
+    margin: 0 15px; /* Space between links */
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2em; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navlink:hover {
+    color: #1abc9c; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+.movie{
+  border: 2px solid #fcfbfb (0, 0%, 8 0%);
+  border-radius: 15px;
+  box-shadow:0px 4px 10px rgba(14, 13, 13, 0.5);
+  padding:10px;
+  margin: 20px;
   text-align: center;
+   max-width: 300px;
+   overflow: hidden;
+   display: inline-block;
+}
+.movie .movie-img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.movie .movie-title{ 
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0%;
+  color: rgb(8, 8, 100);
+  font-weight: bold;
+}
+.movie .movie-year{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(240, 240, 242);
+}
+.movie .movie-text{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(243, 243, 245);
+}
+.movie .movie-genre{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(252, 252, 253);
+}
+.navlink {
+    text-align: center;
+    margin-top: 10px;
+}
+.about-container {
+    max-width: 800px; /* Center the content and limit width */
+    margin: 20px auto; /* Center horizontally */
+    padding: 20px; /* Padding for spacing */
+    background-color: #111; /* Dark background for contrast */
+    color: #fff; /* White text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.about-container h1 {
+    font-size: 2em; /* Title size */
+    margin-bottom: 20px; /* Space below title */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-:root {
-  background-color: lightblue;
-  font-family: lato, sans-serif;
-}
-h1 {
-   color: rgb(46, 19, 167);
-  text-align: centre;
-}
-h2 {
-   color: rgb(248, 247, 248);
-  text-align: inherit;
+.about-container p {
+    line-height: 1.6; /* Better readability */
+    margin-bottom: 10px; /* Space between paragraphs */
 }
 
-
+footer {
+    text-align: center; /* Center footer text */
+    margin-top: 30px; /* Space above footer */
+}

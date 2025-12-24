@@ -1,0 +1,53 @@
+.home-container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    background-image: url('path_to_your_background_image.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background image */
+    position: relative; /* Position relative for overlays */
+}
+
+.movie-poster {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 600px; /* Max width for content */
+    text-align: center; /* Center text */
+}
+
+.movie-title {
+    font-size: 2.5rem; /* Size of the title */
+    color: white; /* Title color */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.movie-description {
+    font-size: 1rem; /* Size of the description */
+    color: white; /* Description color */
+    margin-bottom: 20px; /* Space below description */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons */
+}
+
+.play-button,
+.info-button {
+    background-color: #ffcc00; /* Button color */
+    border: none;
+    color: black; 
+    font-size: 1rem; 
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin: 0 10px; /* Space between buttons */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.play-button:hover,
+.info-button:hover {
+    background-color: #e5be00; /* Darker shade on hover */
+}

@@ -7,8 +7,8 @@ const MoviesPage = ({ onSelectMovie }) => {
   const moviesPerPage = 8;
 
   useEffect(() => {
-    fetch("/movies.json")
-      .then((res) => res.json())
+    fetch("/movies.jsx")
+      .then((res) => res.jsx())
       .then(setMovies);
   }, []);
 
@@ -17,27 +17,27 @@ const MoviesPage = ({ onSelectMovie }) => {
   const paginated = movies.slice((page - 1) * moviesPerPage, page * moviesPerPage);
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
-      <h2 className="text-3xl font-bold mb-6 dark:text-white">Trending</h2>
+    <div className>
+      <h2 className>Trending</h2>
       <MovieList movies={topRated} onSelect={onSelectMovie} />
 
-      <h2 className="text-3xl font-bold my-6 dark:text-white">Latest</h2>
+      <h2 className>Latest</h2>
       <MovieList movies={latest} onSelect={onSelectMovie} />
 
-      <h2 className="text-3xl font-bold my-1 dark:text-white">All Movies</h2>
+      <h2 className>All Movies</h2>
       <MovieList movies={paginated} onSelect={onSelectMovie} />
 
       {/* Pagination */}
-      <div className="flex justify-center gap-4 mt-6">
+      <div className>
         <button
           onClick={() => setPage((p) => Math.max(p - 1, 1))}
-          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition"
+          className
         >
           Prev
         </button>
         <button
           onClick={() => setPage((p) => p + 1)}
-          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition"
+          className
         >
           Next
         </button>
@@ -47,3 +47,4 @@ const MoviesPage = ({ onSelectMovie }) => {
 };
 
 export default MoviesPage;
+

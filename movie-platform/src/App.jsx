@@ -1,29 +1,27 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
-import HomePage from "./components/Homepage";
-import MovieDetails from "./components/MovieDetails";
-import MoviesPage from "./components/MoviesPage";
+import Footer from "./components/Footer";
 import About from "./components/About";
+import Home from "./components/Home";
+import Movie from "./data/Movie";
+import Navbar from './components/Navbar';
+import Poster from './components/Poster';
 
 function App() {
-  const [selectedMovie, setSelectedMovie] = useState(null);
-
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage onSelectMovie={setSelectedMovie} />} />
-        <Route path="/movies" element={<MoviesPage onSelectMovie={setSelectedMovie} />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+            <Header />
+            <Navbar />
+            <Routes>
+                <Route path="/movies" element={<Movie />} />
+                <Route path="/about" element={<About />} />
+               <Route path="/home" element={<Poster />} /> 
+                <Route path="/" element={<Home />} /> {/* Default route */}
+            </Routes>
+        
 
-      {selectedMovie && (
-        <MovieDetails
-          movie={selectedMovie}
-          onClose={() => setSelectedMovie(null)}
-        />
-      )}
+      <Footer />
     </>
   );
 }

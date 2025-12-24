@@ -1,0 +1,48 @@
+.movie-poster {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px; 
+    border-radius: 10px; /* Rounded corners */
+    max-width: 600px; /* Max width for content */
+    text-align: center; /* Center text */
+    background-size: cover; /* Ensure the background image covers all */
+    background-position: center; /* Center the background image */
+    height: 400px; /* Fixed height for uniformity */
+    display: flex; /* Flexbox for centering content */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements vertically */
+    color: white; /* Text color */
+}
+
+.movie-title {
+    font-size: 2.5rem; /* Size of the title */
+    margin-bottom: 10px; 
+}
+
+.movie-description {
+    font-size: 1rem; 
+    margin-bottom: 20px;
+    padding: 0 10px; /* Add some padding for better readability */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+}
+
+.play-button,
+.info-button {
+    background-color: #ffcc00; /* Button color */
+    border: none;
+    color: black; 
+    font-size: 1rem; 
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin: 0 10px; 
+    transition: background-color 0.3s; 
+}
+
+.play-button:hover,
+.info-button:hover {
+    background-color: #e5be00; /* Darker shade on hover */
+}
